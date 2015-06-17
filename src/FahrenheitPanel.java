@@ -8,6 +8,7 @@ import javax.swing.*;
  */
 public class FahrenheitPanel extends JPanel {
     private JLabel inputLabel, outputLabel, resultLabel;
+    private JButton convertBtn;
     private JTextField fahrenheitField;
 
     //Constructor: Set up GUI items.
@@ -16,18 +17,23 @@ public class FahrenheitPanel extends JPanel {
         inputLabel = new JLabel("Enter Fahrenheit temperature: ");
         outputLabel = new JLabel("Temperature in Celsius:");
         resultLabel = new JLabel("----");
+        convertBtn = new JButton("Convert");
+
+
 
         //text fields that accepts 5 characters
         fahrenheitField = new JTextField(5);
-        //add event listener to the text field
+        //add event listener to the text field and button
         fahrenheitField.addActionListener(new TempListener());
+        convertBtn.addActionListener(new TempListener());
+
 
         //add GUI items to panel
         add(inputLabel);
         add(fahrenheitField);
         add(outputLabel);
         add(resultLabel);
-
+        add(convertBtn);
         //set window size
         setPreferredSize(new Dimension(300,100));
 
